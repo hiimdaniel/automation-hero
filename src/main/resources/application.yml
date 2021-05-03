@@ -1,0 +1,5 @@
+automation-hero:
+  resources:
+    input-file-path: ${INPUT_FILE:src/main/resources/test_input_file_small.txt}
+    output-file-path: ${OUTPUT_FILE:src/main/resources/test_output_file.txt}
+    temp-file-path: ${TEMP_OUTPUT_FILE:src/main/resources/temp_output_file.txt}
