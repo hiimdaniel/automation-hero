@@ -1,5 +1,6 @@
 package com.daniel.automationhero;
 
+import com.daniel.automationhero.service.MergeSortService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,7 +11,7 @@ public class AutomationHeroApplication {
 
     public static void main(String[] args) throws IOException {
         var ctx = SpringApplication.run(AutomationHeroApplication.class, args);
-        FileSorting service = ctx.getBean(FileSorting.class);
-        service.bubbleSortFile();
+        MergeSortService service = ctx.getBean(MergeSortService.class);
+        service.externalMergeSortFile();
     }
 }
