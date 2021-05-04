@@ -14,7 +14,7 @@ Following preconditions:
 characters.
 
 ### Local testing and running ###
-To run the program locally first please fill out the [properties file](src\main\resources\application.yml) in the application resources 
+To run the program locally first please fill out the [properties file](automation-hero\src\main\resources\application.yml) in the application resources 
 or define the following parameters: 
 * EXTERNAL_MERGE_CHUNK_SIZE: size of the chunks used during merge sort (required only for merge sort)
 * INPUT_FILE: input file path
