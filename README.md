@@ -14,7 +14,8 @@ Following preconditions:
 characters.
 
 ### Local testing and running ###
-To run the program locally first please fill out the [properties file](/src/main/resources/application.yml) in the application resources 
+To run the program locally first please fill out the 
+properties file](/src/main/resources/application.yml) in the application resources 
 or define the following parameters: 
 * EXTERNAL_MERGE_CHUNK_SIZE: size of the chunks used during merge sort (required only for merge sort)
 * INPUT_FILE: input file path
@@ -23,7 +24,7 @@ or define the following parameters:
 * TEMP_OUTPUT_FOLDER: path of the folder where the temporal chunks of the input file will be stored. The folder shouldn't exist before running the application and will be deleted after. (required only for merge sort)
 
 After this the application is able to start with the default profile.
-Please note that by default the external merge sort solution will be used. If you wish to change to external bubble sort please modify [AutomationHeroApplication.java](src\main\java\com\daniel\automationhero\AutomationHeroApplication.java)
+Please note that by default the external merge sort solution will be used. If you wish to change to external bubble sort please modify [AutomationHeroApplication.java](/src/main/java/com/daniel/automationhero/AutomationHeroApplication.java)
 
 The current properties are pointing to the resource folder where there are two example input files to test the application.
 
@@ -40,7 +41,7 @@ Ok, so we have to use some sort of external sorting and temporary storing data i
 I implemented a sort of bubble sort as a bad example, and a merge sort to show the differences.
 
 #### Bubble sort
-Under the hood [this algorithm](src\main\java\com\daniel\automationhero\service\BubbleSortService.java) is using a temporary file, and the output file to comparing and storing the elements of the whole input file.
+Under the hood this algorithm](src\main\java\com\daniel\automationhero\service\BubbleSortService.java) is using a temporary file, and the output file to comparing and storing the elements of the whole input file.
 First it places the content of the input file to the temp file, opens a stream to the temp file, comparing the actual and the previous elements and writing the smaller one to the output file.
 If the stream ends it will swap the functionality of the output, and the temp file and runs recursively until any swap happens between two neighbouring elements of the stream.
 When the algorithm finishes it will remove the temp file.
@@ -51,7 +52,7 @@ The problem is that Bubble sort has a O(N^2) time complexity plus the File IO op
 sort a bigger file (several GBs) then it's going to take ages, but that's how square complexity works.
 
 #### Merge sort
-[Merge sort](src\main\java\com\daniel\automationhero\service\MergeSortService.java) takes a rather different approach. It streams the original file and creates K number of M sized or smaller (need to set this one in the properties file) chunks.
+[Merge sort](/src/main/java/com/daniel/automationhero/service/MergeSortService.java) takes a rather different approach. It streams the original file and creates K number of M sized or smaller (need to set this one in the properties file) chunks.
 After this it will read all the chunks in separated streams and find the smallest element which will be written in the output file. This step will continue as long as there are elements in the streams.
 The time complexity of the first step (divide and sort) is O(K*M*log M) as we need to iterate through every M sized chunks K times and using a default List.sort with time complexity of O(NlogN).
 Finding the smallest element is O(K*M) as we need to iterate through K number of elements M times. 
