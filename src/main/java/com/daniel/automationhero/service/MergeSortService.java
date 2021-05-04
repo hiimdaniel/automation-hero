@@ -37,6 +37,7 @@ public class MergeSortService {
         List<ChunkElement> chunks = readSortedChunks();
         mergeChunksAndWriteToFile(chunks);
         fileIoService.deleteAllFromFolder(Path.of(resourceConfig.getTempFolderPath()));
+        fileIoService.deleteFolder(Path.of(resourceConfig.getTempFolderPath()));
         log.info("Processing finished in seconds: {}", (System.nanoTime() - start) / 1000000000);
     }
 

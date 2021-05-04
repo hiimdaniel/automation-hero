@@ -97,6 +97,19 @@ public class FileIoService {
         }
     }
 
+    public void deleteFolder(Path path) {
+        if (Files.isDirectory(path)) {
+            try {
+                Files.delete(path);
+            } catch (IOException e) {
+                log.error("An exception occurred during writing to file. File path: {} Original exception message: {}", path, e.getMessage());
+                throw new RuntimeException(e);
+            }
+        } else {
+            throw new RuntimeException("The given path is not a folder!");
+        }
+    }
+
     public List<Path> getFilePathsInFolder(Path folder) {
         if (Files.isDirectory(folder)) {
             try {
