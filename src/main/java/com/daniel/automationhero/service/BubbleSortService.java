@@ -58,7 +58,7 @@ public class BubbleSortService {
             }
         });
         fileIoService.writeNewLineToFile(Path.of(outputFilePathString), prevItemHolder.get().toString());
-        log.info("Iterated through file for sorting. Round: {} Number of swaps in this turn: {}", turn, numberOfSwaps.get());
+        log.debug("Iterated through file for sorting. Round: {} Number of swaps in this turn: {}", turn, numberOfSwaps.get());
         if (swapped.get()) {
             bubbleSortFileRecursively(outputFilePathString, tempFilePathString, turn + 1);
         }

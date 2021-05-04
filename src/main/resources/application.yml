@@ -1,9 +1,9 @@
 automation-hero:
   sorting:
     merge:
-      chunk-size: ${EXTERNAL_MERGE_CHUNK_SIZE:100000}
+      chunk-size: ${EXTERNAL_MERGE_CHUNK_SIZE:500}
   resources:
-    input-file-path: ${INPUT_FILE:C:/privát/automation-hero/test_input_file_big.txt}
-    output-file-path: ${OUTPUT_FILE:C:/privát/automation-hero/test_output_file.txt}
-    temp-file-path: ${TEMP_OUTPUT_FILE:C:/privát/automation-hero/temp_output_file.txt}
-    temp-folder-path: ${TEMP_OUTPUT_FOLDER:C:/privát/automation-hero/temp_output_folder}
+    input-file-path: ${INPUT_FILE:src/main/resources/test_input_file.txt}
+    output-file-path: ${OUTPUT_FILE:src/main/resources/test_output_file.txt}
+    temp-file-path: ${TEMP_OUTPUT_FILE:src/main/resources/temp_output_file.txt}
+    temp-folder-path: ${TEMP_OUTPUT_FOLDER:src/main/resources/temp_output_folder}
