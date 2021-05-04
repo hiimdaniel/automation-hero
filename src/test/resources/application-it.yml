@@ -1,0 +1,9 @@
+automation-hero:
+  sorting:
+    merge:
+      chunk-size: ${EXTERNAL_MERGE_CHUNK_SIZE:5}
+  resources:
+    input-file-path: ${INPUT_FILE:src/test/resources/test_input_file.txt}
+    output-file-path: ${OUTPUT_FILE:src/test/resources/test_output_file.txt}
+    temp-file-path: ${TEMP_OUTPUT_FILE:src/test/resources/temp_output_file.txt}
+    temp-folder-path: ${TEMP_OUTPUT_FOLDER:src/test/resources/temp_output_folder}
